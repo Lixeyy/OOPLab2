@@ -8,7 +8,11 @@ internal class Program
         var sortedSentences = text.GetSortedSentences();
 
         Console.WriteLine($"1. Text:\n{text.Data}\n");
-        Console.WriteLine($"2. Sorted sentences:\n{string.Join("\n", sortedSentences)}");
+        Console.WriteLine("2. Sorted sentences");
+        foreach (var sentence in sortedSentences)
+        {
+            Console.WriteLine($"[{sentence.WordsCount}] {sentence.Data}");
+        }
 
         Console.ReadKey();
     }
