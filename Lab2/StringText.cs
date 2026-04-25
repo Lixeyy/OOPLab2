@@ -11,13 +11,13 @@ public class StringText
         Data = txt;
     }
 
-    public string[] GetSortedSentences()
+    public Sentence[] GetSortedSentences()
     {
         var sentences = DivideIntoSentences();
 
         Array.Sort(sentences, SentenceComparerByWordsCount);
 
-        return ConvertSentencesToStrings(sentences);
+        return sentences;
     }
 
     private Sentence[] DivideIntoSentences()
@@ -49,17 +49,6 @@ public class StringText
         var sentenceObj = new Sentence(wholeSentence);
 
         return (enIndex, sentenceObj);
-    }
-
-    private static string[] ConvertSentencesToStrings(Sentence[] sentences)
-    {
-        var sentencesCount = sentences.Length;
-        var result = new string[sentencesCount];
-        for (var i = 0; i < sentencesCount; i++)
-        {
-            result[i] = sentences[i].Data;
-        }
-        return result;
     }
 
     private static int SentenceComparerByWordsCount(Sentence sentence1, Sentence sentence2)
