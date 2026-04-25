@@ -14,9 +14,7 @@ public class StringText
     public Sentence[] GetSortedSentences()
     {
         var sentences = DivideIntoSentences();
-
-        Array.Sort(sentences, SentenceComparerByWordsCount);
-
+        sentences.Sort(SentenceComparerByWordsCount);
         return sentences;
     }
 
@@ -38,17 +36,17 @@ public class StringText
     private (int currIndex, Sentence sentence) ExtractFullSentence(int currIndex, string rawSentence)
     {
         var startIndex = Data.IndexOf(rawSentence, currIndex, StringComparison.Ordinal);
-        var enIndex = startIndex + rawSentence.Length;
+        var endIndex = startIndex + rawSentence.Length;
 
-        while (enIndex < Data.Length && SentenceSeparators.Contains(Data[enIndex]))
+        while (endIndex < Data.Length && SentenceSeparators.Contains(Data[endIndex]))
         {
-            enIndex++;
+            endIndex++;
         }
 
-        var wholeSentence = Data.Substring(startIndex, enIndex - startIndex);
+        var wholeSentence = Data.Substring(startIndex, endIndex - startIndex);
         var sentenceObj = new Sentence(wholeSentence);
 
-        return (enIndex, sentenceObj);
+        return (endIndex, sentenceObj);
     }
 
     private static int SentenceComparerByWordsCount(Sentence sentence1, Sentence sentence2)
