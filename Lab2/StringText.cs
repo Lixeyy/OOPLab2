@@ -13,14 +13,14 @@ public class StringText
 
     public string[] GetSortedSentences()
     {
-        var sentences = DivideIntoSentencees();
+        var sentences = DivideIntoSentences();
 
         Array.Sort(sentences, SentenceComparerByWordsCount);
 
         return ConvertSentencesToStrings(sentences);
     }
 
-    private Sentence[] DivideIntoSentencees()
+    private Sentence[] DivideIntoSentences()
     {
         var strSentences = Data.Split(SentenceSeparators, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
