@@ -2,7 +2,7 @@
 
 public class StringText
 {
-    private static readonly char[] SentenceSeparators =  ['!', '?', '.', '\n'];
+    private static readonly char[] SentenceSeparators =  ['!', '?', '.'];
 
     public string Data { get; }
 
