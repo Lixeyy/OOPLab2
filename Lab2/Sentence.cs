@@ -2,7 +2,7 @@
 
 public class Sentence
 {
-    private static readonly char[] WordSeparators =  [' ', ':', '–', '—', ',', ';'];
+    private static readonly string[] WordSeparators =  [" - ", " ", ":", "–", "—", ",", ";"];
 
     public string Data { get; }
 

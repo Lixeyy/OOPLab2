@@ -1,5 +1,4 @@
 ﻿using JetBrains.Annotations;
-using Lab2;
 using Xunit;
 
 namespace Lab2.Tests;
@@ -53,7 +52,7 @@ public class SentenceTest
     public void WordsCount_WhenDataHasDifferentSeparators_ShouldReturnCorrectNumber()
     {
         // Arrange
-        var sentence = "Fruits:bananas,mango-marakuyas;apples — cool food!";
+        var sentence = "Fruits:bananas,mangoes;apples — cool food!";
         var sentenceObj = new Sentence(sentence);
 
         // Act
@@ -61,5 +60,19 @@ public class SentenceTest
 
         // Assert
         Assert.Equal(6, result);
+    }
+
+    [Fact]
+    public void WordsCount_WhenDataContainsHyphenatedWordsAndHyphenSeparators_ShouldReturnCorrectNumber()
+    {
+        // Arrange
+        var sentence = "Mango-marakuya, stir-fry, corn-on-the-cob - are food";
+        var sentenceObj = new Sentence(sentence);
+
+        // Act
+        var result = sentenceObj.WordsCount;
+
+        // Assert
+        Assert.Equal(5, result);
     }
 }
