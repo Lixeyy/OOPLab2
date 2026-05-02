@@ -12,6 +12,6 @@
 
 ## Відео захисту
 
-[![Дивитися відео в Youtube](  )]( )
+[![Дивитися відео в Youtube](https://github.com/user-attachments/assets/91b354cd-b664-4d5c-8139-3884fbf547f0)](https://youtu.be/yNeIbKrJ3ns)
 
-
+https://youtu.be/yNeIbKrJ3ns
